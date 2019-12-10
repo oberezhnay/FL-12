@@ -191,8 +191,8 @@ section:before {
         line-height: 24px;
     }
 
-    .padding-medium,
     .tm-banner,
+    .padding-medium,    
     .tm-main-content {
         padding: 0;
         margin: 0;
