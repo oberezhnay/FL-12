@@ -1,0 +1,271 @@
+// Write your styles here
+@mixin button-JoinUs {
+    width: 115px;
+    height: 40px;
+    background-color: $buttonColor;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+@mixin selectedWord($z-index, $width, $height, $left, $bottom) {
+    content: '';
+    position: absolute;
+    background-color: $selectedWordColor;
+    z-index: $z-index;
+    width: $width;
+    height: $height;
+    left: $left;
+    bottom: $bottom;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background-color: $baseColor;
+    // width: 1920px;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+header {
+    background: no-repeat url($headerBackground) center center;
+    background-size: cover;
+    width: 100%;
+    border-radius: 0 0 600px/210px 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.header-wrap {
+    opacity: 0.75;
+    padding-left: 153px;
+    width: 630px;
+    padding-top: 14px;
+
+    .landing-logo {
+        display: flex;
+
+        img {
+            width: 6%;
+            height: 6%;
+            // transform: scale(0.8);
+        }
+
+        p {
+            font-size: 20px;
+            padding-left: 10px;
+
+            span {
+                text-align: center;
+                display: block;
+                font-size: 8px;
+            }
+        }
+    }
+
+    .header_heading {
+        font-size: 57px;
+        font-weight: bold;
+        padding-top: 56px;
+        letter-spacing: 0.3px;
+        line-height: 60px;
+        position: relative;
+        z-index: 2;
+
+        &:before {
+            @include selectedWord(-1, 242px, 40px, 0px, 4px);
+        }
+    }
+
+    .header_text {
+        padding-top: 25px;
+        white-space: pre-line;
+        line-height: 1.4em;
+    }
+
+}
+
+.header_button,
+.login {
+    margin-top: 49px;
+    margin-bottom: 140px;
+}
+
+.header_button {
+    @include button-JoinUs()
+}
+
+.login {
+    color: honeydew;
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 117px;
+}
+
+.section {
+    padding-top: 28px;
+    text-align: justify;
+    align-items: center;
+    color: $baseColor;
+
+    .section_text {
+        font-size: 33px;
+        text-align: center;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        margin-left: 12px;
+        color: black;
+        position: relative;
+        z-index: 2;
+
+        &:before {
+            @include selectedWord(-1, 152px, 40px, 758px, 6px);
+        }
+    }
+
+    .section_card_wrap {
+        width: 61.5%;
+        margin: 0 auto;
+        padding-left: 15px;
+        padding-top: 10px;
+
+        .section_card {
+            display: flex;
+            margin: 20px;
+            border-radius: 6px;
+            background-color: $sectionCardBackground;
+            font-family: 'Source Sans Pro', sans-serif;
+
+            .section_card_img {
+                width: 110%;
+                margin: 15px;
+                border-radius: 6px;
+            }
+
+            .section_card_right_container {
+                padding-left: 70px;
+                padding-right: 70px;
+                margin: auto 0;
+                line-height: 1.4em;
+
+                .section_card_heading {
+                    color: white;
+                    text-align: center;
+                    padding-bottom: 40px;
+                    font-size: 20px;
+                }
+
+                .section_card_text {
+                    font-family: 'Hind', sans-serif;
+                    font-size: 12px;
+                    color: #ccc;
+                    text-align: justify;
+                }
+
+                .section_link {
+                    margin-left: 125px;
+                    color: $baseColor;
+                    font-size: 14px;
+                    font-family: 'Source Sans Pro', sans-serif;
+                }
+
+            }
+        }
+    }
+}
+
+
+
+
+.section_banner {
+    width: 63%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 6px;
+    transform: translateY(95px);
+    margin: auto;
+    padding-left: -20px;
+    position: relative;
+    background: linear-gradient(45deg, #699900, #2d5bda);
+    z-index: 10;
+
+    .section_banner_text_wrap {
+        width: 35%;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        display: block;
+        height: 100px;
+
+        &::before {
+            @include selectedWord(-1, 58px, 43px, 222px, 48px);
+        }
+    }
+
+    .section_banner_heading {
+        padding-top: 20px;
+        color: black;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+
+    }
+
+    .section_banner_text {
+        flood-color: $baseColor;
+        font-size: 12px;
+        font-weight: normal;
+        padding-top: 16px;
+    }
+
+    .section_banner_button {
+        @include button-JoinUs
+    }
+}
+
+.footer {
+    display: flex;
+    background-color: $footerColorBackground;
+    position: relative;
+    justify-content: space-between;
+    height: 250px;
+    .footer-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 50px 150px 0px 150px;
+        color: #ccc;
+        font-family: 'Source Sans Pro', sans-serif;;
+        .footer_logo {
+            img {
+                display: inline-block;
+                margin-top: 15px;
+            }
+            p {
+                @extend img;
+                vertical-align: top;
+                text-align: center;
+                margin-left: 10px;
+                font-weight: bold;
+                font-size: 24px;
+                
+                span {
+                    display: block;
+                    font-size: 10px;
+                    line-height: 10px;
+                }
+            }
+            
+        }
+        .footer_text {
+            width: 300px;
+        }
+    }
+}
